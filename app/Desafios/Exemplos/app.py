@@ -8,7 +8,7 @@ class Cliente:
         return f"Cadastro realizado: \n nome: {self.nome} cpf: {self.cpf}"
 
 cliente1 = Cliente("Maria","108.545.454-35")
-print(Cliente)
+print(cliente1)
 
 #conta
 class Conta:
@@ -20,14 +20,14 @@ class Conta:
     def depositar(self,valor):
         if valor > 0:
             self.saldo += valor
-            print(f"Deposito de R$  {valor:2f} realizado")
+            print(f"Deposito de R$  {valor:.2f} realizado")
         else:
             print("Valor inválido")
     
     def sacar(self,valor):
         if valor <= self.saldo:
             self.saldo -= valor
-            print(f"Saque de R$ {valor:2f} realizado")
+            print(f"Saque de R$ {valor:.2f} realizado")
         else:
             print("Saldo insuficiente")
     
@@ -66,8 +66,7 @@ class ContaCorrente(Conta):
             f"Conta: {self.numero}\n"
             f"Titular: {self.cliente.nome}\n"
             f"Saldo R$ {self.saldo}\n"
-            f"Limite: R${self.limite}"
-        )
+            f"Limite: R${self.limite}")
 
 #Herança conta poupança
 class ContaPoupanca(Conta):
